@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lillie Redmond | Portfolio</title>
+    
+    <link rel="icon" href="L_icon.png" type="image/png">
+    <!-- Icon attribution: https://www.flaticon.com/free-icons/letter-l" title="letter l icons" Letter l icons created by Zane Priedite - Flaticon -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">    
+    
+    <style>
+        :root {
+            --bg-main: #030303;
+            --bg-panel: rgba(20, 20, 25, 0.7);
+            --text-main: #e0e0e0;
+            --text-muted: #999999;
+            --white: #ffffff;
+            
+            --purple-glow: rgba(157, 78, 221, 0.4);
+            --purple-bright: #b142ff;
+            --purple-light: #d8a1ff;
+            
+            --panel-border: 1px solid rgba(255, 255, 255, 0.08);
+            --panel-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo Play', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            background-image: radial-gradient(circle at 50% 0%, #170a29 0%, transparent 60%);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 3rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+            background: rgba(10, 10, 12, 0.8);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: var(--panel-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn {
+            background: transparent;
+            color: var(--text-muted);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.2rem; 
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .tab-btn:hover {
+            color: var(--white);
+            text-shadow: 0 0 8px var(--purple-light);
+        }
+
+        .tab-btn.active {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--purple-bright);
+            box-shadow: inset 0 0 10px rgba(177, 66, 255, 0.2);
+            border: 1px solid rgba(177, 66, 255, 0.3);
+        }
+
+        /* Layout */
+        .tab-content {
+            display: none;
+            width: 100%;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .tab-content.active {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem; 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Text */
+        h1.main-title {
+            font-size: 3.5rem; 
+            color: var(--white);
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px var(--purple-glow);
+            font-weight: 800;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        h2.section-title {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--purple-light);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        /* Panels */
+        .panel {
+            background: var(--bg-panel);
+            backdrop-filter: blur(12px);
+            border: var(--panel-border);
+            border-radius: var(--panel-radius);
+            padding: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .panel:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 15px var(--purple-glow);
+            border-color: rgba(177, 66, 255, 0.3);
+        }
+
+        /* Content Formatting */
+        p.overview-text {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+
+        .date-location {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        ul {
+            margin-left: 1.2rem;
+            color: var(--text-main);
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        /* Experience Section */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--purple-bright);
+            box-shadow: 0 0 10px var(--purple-bright);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Education & Skills */
+        .split-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skill-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-group p {
+            color: var(--white);
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .lang-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .lang-tag {
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        .lang-primary {
+            border-color: rgba(177, 66, 255, 0.5);
+            background: rgba(177, 66, 255, 0.05);
+        }
+
+        .lang-tag:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .lang-primary:hover {
+            background: rgba(177, 66, 255, 0.2);
+            border-color: var(--purple-bright);
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-image {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .media-placeholder {
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 10px;
+            background: #080808;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-placeholder span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--purple-light);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .project-link {
+            color: var(--white);
+            text-decoration: none;
+            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .project-link:hover {
+            background: rgba(177, 66, 255, 0.15);
+            border-color: var(--purple-bright);
+            color: var(--white);
+        }
+
+        /* Contact Section */
+        .profile-pic-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--purple-bright);
+            box-shadow: 0 0 25px var(--purple-glow), inset 0 0 15px rgba(177, 66, 255, 0.5);
+            padding: 4px;
+            background: rgba(177, 66, 255, 0.1);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2rem 1.5rem;
+            border-radius: var(--panel-radius);
+            border: var(--panel-border);
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-item:hover {
+            background: rgba(177, 66, 255, 0.05);
+            border-color: rgba(177, 66, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .contact-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            word-break: break-word; 
+            overflow-wrap: break-word;
+            font-weight: 700;
+        }
+
+        .contact-item a:hover {
+            color: var(--purple-light);
+        }
+
+        @media (max-width: 768px) {
+            h1.main-title { font-size: 2.8rem; }
+            .split-grid { grid-template-columns: 1fr; }
+            .project-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <button class="tab-btn active" onclick="currTab('home')">Home</button>
+            <button class="tab-btn" onclick="currTab('projects')">Projects</button>
+            <button class="tab-btn" onclick="currTab('contact')">Contact</button>
+        </nav>
+
+        <main id="home" class="tab-content active">
+            
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <h1 class="main-title">Lillie Redmond</h1>
+                <div class="subtitle">Computer Science Portfolio</div>
+            </div>
+
+            <div class="panel">
+                <p class="overview-text">Ambitious and eager computer science student with exceptional responsibility and organizational skills. Seeking to expand upon computer expertise in an immersive environment. Able to work well under pressure and adapt to new situations. Determined to grow as a computer science specialist while demonstrating initiative and striving for excellence.</p>
+            </div>
+
+            <div class="panel">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="timeline-item">
+                    <h3>AI Data Specialist | DataAnnotation</h3>
+                    <div class="date-location">June 2025 - Present | Remote</div>
+                    <ul>
+                        <li>Train AI models by crafting high-quality prompts, analyzing model responses, developing detailed evaluation criteria, and identifying flaws.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Teaching Assistant | Project STEM</h3>
+                    <div class="date-location">July 2024 - Present | Remote</div>
+                    <ul>
+                        <li>Provide assistance to teachers, format class lessons, and tutor high school students across the country in Python and AP Computer Science courses.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Coding Camp Counselor | CATA</h3>
+                    <div class="date-location">June 2022 | Monroe, NC</div>
+                    <ul>
+                        <li>Shaped and enhanced the skills of 15 middle school students by directing coding activities such as building websites, drone programming, and Python.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="split-grid">
+                
+                <div class="panel">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3>University of Southern California</h3>
+                        <div class="date-location">Expected May 2027 | Los Angeles, CA</div>
+                        <ul>
+                            <li>Junior Computer Science Major</li>
+                            <li>Relevant Coursework: Algorithms and Theory of Computing, Discrete Methods in Computer Science, Software Engineering, Full-Stack Web Development, Cross-Platform App Development, Principles of Software Development, Accelerated Programming in Python, Data Structures and Object Oriented Design</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3>Central Academy of Technology & Arts</h3>
+                        <div class="date-location">June 2023 | Monroe, NC</div>
+                        <ul>
+                            <li>4.0 Unweighted GPA | 34 ACT | Dual enrollment at South Piedmont Community College</li>
+                            <li>Relevant Coursework: Ethics and High Technology, Network and Security Foundations, Technology Crimes and Law, Computer Crime Investigation, Computer Forensics I & II</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2 class="section-title">Technical Arsenal</h2>
+                    
+                    <div class="skill-group">
+                        <p>Primary Languages</p>
+                        <div class="lang-container">
+                            <span class="lang-tag lang-primary">Python</span>
+                            <span class="lang-tag lang-primary">Java</span>
+                            <span class="lang-tag lang-primary">HTML/CSS</span>
+                            <span class="lang-tag lang-primary">SQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-group" style="margin-bottom: 2.5rem;">
+                        <p>Experienced In</p>
+                        <div class="lang-container">
+                            <span class="lang-tag">Dart</span>
+                            <span class="lang-tag">C</span>
+                            <span class="lang-tag">C++</span>
+                            <span class="lang-tag">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title" style="font-size: 1.4rem;">Certifications</h2>
+                    <ul style="margin-left: 1rem;">
+                        <li>Intro to Programming Using Python - Microsoft Certified</li>
+                        <li>TestOut Network Pro Certified</li>
+                        <li>Cyber Crime Technology CTE Certification</li>
+                        <li>Information Technology - Systems Security CTE</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <main id="projects" class="tab-content">
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 class="main-title">Featured Work</h1>
+                <div class="subtitle">Code & Implementations</div>
+            </div>
+            
+            <div class="project-grid">
+
+                <div class="panel">
+                    <h2 class="section-title" style="font-size: 1.6rem; border-bottom: none; margin-bottom: 0.5rem;">ChatPet</h2>
+                    
+                    <div class="media-placeholder">
+                        <span>Video coming soon!</span>
+                    </div>
+                    
+                    <p style="margin-bottom: 1.5rem;">Developed as a collaborative group project for a software engineering course at USC, ChatPet is an AI-powered digital companion that simulates the experience of raising a virtual pet. Through natural language conversations and caretaking actions, including feeding and resting, users maintain the pet's happiness, hunger, and energy meters. Consistent interaction is rewarded with the pet's visual evolution and the development of a unique personality, fostering empathy, responsibility, and a personalized user experience.</p>
+                    <a href="https://github.com/xl0u1sx/Project-ChatPet" target="_blank" class="project-link">View Repository ➔</a>
+                </div>
+                
+                <div class="panel">
+                    <h2 class="section-title" style="font-size: 1.6rem; border-bottom: none; margin-bottom: 0.5rem;">Unfollowed</h2>
+                    <img src="unfollowed_usage.png" alt="Unfollowed Usage Example" class="project-image">
+                    
+                    <p style="margin-bottom: 1.5rem;">Simple program to find users an account is following who are not following back.</p>
+                    <a href="https://github.com/inexaura/unfollowed" target="_blank" class="project-link">View Repository ➔</a>
+                </div>
+
+            </div>
+        </main>
+
+        <main id="contact" class="tab-content">
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 class="main-title">Network</h1>
+            </div>
+
+            <div class="profile-pic-container">
+                <img src="headshot311.png" alt="Lillie Redmond Headshot" class="profile-pic">
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:jlillieredmond@gmail.com">jlillieredmond<br>@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-label">GitHub</div>
+                    <a href="https://github.com/inexaura" target="_blank">/inexaura</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-label">LinkedIn</div>
+                    <a href="https://www.linkedin.com/in/lillie-redmond" target="_blank">/in/lillie-redmond</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-label">Photography</div>
+                    <a href="https://instagram.com/capturedlilies" target="_blank">@capturedlilies</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function currTab(theTab) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(theTab).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
