@@ -241,7 +241,7 @@ const App = () => {
             </div>
             <div className="contact-item">
               <div className="contact-label">Photography</div>
-              <a href="https://instagram.com/capturedlilies" target="_blank" rel="noreferrer">@capturedlilies <span className="link-arrow">↗</span></a>
+              <a href="https://instagram.com/_stargazerlilies_" target="_blank" rel="noreferrer">@_stargazerlilies_ <span className="link-arrow">↗</span></a>
             </div>
           </div>
         </FadeInSection>
