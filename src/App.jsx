@@ -204,7 +204,7 @@ const App = () => {
             <ProjectCard
               title="Unfollowed"
               imageSrc="unfollowed_usage.png"
-              description="A lightweight utility program designed to cross-reference followers and following lists to easily find users an account is following who are not following back."
+              description="A simple, lightweight utility program designed to cross-reference followers and following lists to easily find users an account is following who are not following back."
               repoLink="https://github.com/inexaura/unfollowed"
               imgMaxWidth="500px"
             />
