@@ -194,7 +194,7 @@ li {
 }
 
 li::before {
-  content: '♦';
+  content: '♦\FE0E';
   position: absolute;
   left: 0;
   color: var(--inferno);
@@ -352,7 +352,7 @@ li::before {
 
 /* Mobile Device Viewing */
 @media (max-width: 768px) {
-
+  
   nav {
     flex-wrap: wrap;
     justify-content: center;
