@@ -234,7 +234,7 @@ li::before {
 
 .split-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   gap: 4rem;
   width: 100%;
 }
@@ -350,7 +350,20 @@ li::before {
   transform: translate(3px, -3px);
 }
 
+/* Mobile Device Viewing */
 @media (max-width: 768px) {
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 1rem;
+  }
+
+  .tab-btn {
+    font-size: 0.75rem;
+  }
+
   h1.main-title {
     font-size: 2.2rem;
     letter-spacing: 4px;
@@ -362,6 +375,27 @@ li::before {
 
   h2.section-title {
     font-size: 1.3rem;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+    box-shadow:
+      0 0 0 4px #050508,
+      0 0 0 7px var(--inferno),
+      0 0 0 11px #050508,
+      0 0 0 14px var(--black-cherry),
+      0 0 0 18px #050508,
+      0 0 0 21px var(--shadow-grey),
+      0 0 0 25px #050508,
+      0 0 0 28px var(--silver),
+      0 0 0 32px #050508,
+      0 0 0 35px var(--white-smoke);
+  }
+
+  .profile-pic-container {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
   }
 
   .contact-grid {

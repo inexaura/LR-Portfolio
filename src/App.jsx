@@ -68,7 +68,6 @@ const ProjectCard = ({ title, imageSrc, description, repoLink, demoLink, imgMaxW
     </div>
     <h3 style={{ fontSize: '1.8rem', color: '#fff', marginBottom: '1rem' }}>{title}</h3>
     <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>{description}</p>
-
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
       <a href={repoLink} className="project-link" target="_blank" rel="noreferrer">View Repository</a>
       {demoLink && (
@@ -87,8 +86,10 @@ const App = () => {
         setActiveSection('contact');
         return;
       }
+
       const sections = ['home', 'skills', 'projects', 'contact'];
       let currentSection = 'home';
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -100,6 +101,7 @@ const App = () => {
       }
       setActiveSection(currentSection);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -118,6 +120,7 @@ const App = () => {
           <h1 className="main-title">Lillie Redmond</h1>
           <div className="subtitle">Computer Science Portfolio</div>
         </FadeInSection>
+
         <FadeInSection delay={0.1}>
           <p className="overview-text">
             Ambitious and eager computer science student with exceptional responsibility and organizational skills.
@@ -126,20 +129,24 @@ const App = () => {
             initiative and striving for excellence.
           </p>
         </FadeInSection>
+
         <div className="split-grid">
           <FadeInSection delay={0.2}>
             <div className="content-block">
               <h2 className="section-title">Experience</h2>
+
               <div className="timeline-item">
                 <h3>AI Data Specialist | DataAnnotation</h3>
                 <div className="date-location">June 2025 - Present | Remote</div>
                 <ul><li>Train AI models by crafting high-quality prompts, analyzing model responses, and identifying flaws.</li></ul>
               </div>
+
               <div className="timeline-item">
                 <h3>Teaching Assistant | Project STEM</h3>
                 <div className="date-location">July 2024 - Present | Remote</div>
                 <ul><li>Provide assistance to teachers and tutor high school students in Python and AP Computer Science courses.</li></ul>
               </div>
+
               <div className="timeline-item">
                 <h3>Coding Camp Counselor | CATA</h3>
                 <div className="date-location">June 2022 | Monroe, NC</div>
@@ -147,6 +154,7 @@ const App = () => {
               </div>
             </div>
           </FadeInSection>
+
           <FadeInSection delay={0.3}>
             <div className="content-block">
               <h2 className="section-title">Education</h2>
@@ -155,6 +163,7 @@ const App = () => {
                 <div className="date-location">Expected May 2027 | Los Angeles, CA</div>
                 <ul><li>Junior Computer Science Major</li></ul>
               </div>
+
               <h2 className="section-title">Certifications</h2>
               <ul>
                 <li>Intro to Programming Using Python - Microsoft Certified</li>
@@ -171,6 +180,7 @@ const App = () => {
           <h2 className="huge-section-title">Technical Arsenal</h2>
           <div className="subtitle">Primary Languages & Frameworks</div>
         </FadeInSection>
+
         <FadeInSection delay={0.2}>
           <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto', padding: '4rem 0' }}>
             <SkillGlobe />
@@ -183,23 +193,26 @@ const App = () => {
           <h2 className="huge-section-title">Featured Work</h2>
           <div className="subtitle">Code & Implementations</div>
         </FadeInSection>
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%' }}>
           <FadeInSection delay={0.1}>
             <ProjectCard
               title="ChatPet"
               imageSrc="chatpet_demo.gif"
-              description="Developed as a collaborative group project for a software
-                        engineering course at USC, ChatPet is an AI-powered digital companion that simulates the
-                        experience of raising a virtual pet. Through natural language conversations and caretaking
-                        actions, including feeding and resting, users maintain the pet's happiness, hunger, and energy
-                        meters. Consistent interaction is rewarded with the pet's visual evolution and the development
+              description="Developed as a collaborative group project for a software 
+                        engineering course at USC, ChatPet is an AI-powered digital companion that simulates the 
+                        experience of raising a virtual pet. Through natural language conversations and caretaking 
+                        actions, including feeding and resting, users maintain the pet's happiness, hunger, and energy 
+                        meters. Consistent interaction is rewarded with the pet's visual evolution and the development 
                         of a unique personality, fostering empathy, responsibility, and a personalized user experience."
               repoLink="https://github.com/xl0u1sx/Project-ChatPet"
               demoLink="https://youtube.com/shorts/2HprmH-4oys?feature=shared"
               imgMaxWidth="300px"
             />
           </FadeInSection>
+
           <hr className="project-separator" />
+
           <FadeInSection delay={0.2}>
             <ProjectCard
               title="Unfollowed"
@@ -216,6 +229,7 @@ const App = () => {
         <FadeInSection>
           <h2 className="huge-section-title">Network</h2>
         </FadeInSection>
+
         <FadeInSection delay={0.1}>
           <motion.div
             className="profile-pic-container"
@@ -225,23 +239,24 @@ const App = () => {
             <img src="LR_Headshot.png" alt="Lillie Redmond" className="profile-pic" />
           </motion.div>
         </FadeInSection>
+
         <FadeInSection delay={0.2}>
           <div className="contact-grid">
             <div className="contact-item">
               <div className="contact-label">Email</div>
-              <a href="mailto:jlillieredmond@gmail.com">jlillieredmond@gmail.com <span className="link-arrow">↗</span></a>
+              <a href="mailto:jlillieredmond@gmail.com">jlillieredmond@gmail.com <span className="link-arrow">&#x2197;&#xFE0E;</span></a>
             </div>
             <div className="contact-item">
               <div className="contact-label">GitHub</div>
-              <a href="https://github.com/inexaura" target="_blank" rel="noreferrer">/inexaura <span className="link-arrow">↗</span></a>
+              <a href="https://github.com/inexaura" target="_blank" rel="noreferrer">/inexaura <span className="link-arrow">&#x2197;&#xFE0E;</span></a>
             </div>
             <div className="contact-item">
               <div className="contact-label">LinkedIn</div>
-              <a href="https://www.linkedin.com/in/lillie-redmond" target="_blank" rel="noreferrer">/in/lillie-redmond <span className="link-arrow">↗</span></a>
+              <a href="https://www.linkedin.com/in/lillie-redmond" target="_blank" rel="noreferrer">/in/lillie-redmond <span className="link-arrow">&#x2197;&#xFE0E;</span></a>
             </div>
             <div className="contact-item">
               <div className="contact-label">Photography</div>
-              <a href="https://instagram.com/_stargazerlilies_" target="_blank" rel="noreferrer">@_stargazerlilies_ <span className="link-arrow">↗</span></a>
+              <a href="https://instagram.com/_stargazerlilies_" target="_blank" rel="noreferrer">@_stargazerlilies_ <span className="link-arrow">&#x2197;&#xFE0E;</span></a>
             </div>
           </div>
         </FadeInSection>
