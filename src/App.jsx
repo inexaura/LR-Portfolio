@@ -61,9 +61,9 @@ const SkillGlobe = () => {
   );
 };
 
-const ProjectCard = ({ title, imageSrc, description, repoLink, demoLink, imgMaxWidth }) => (
+const ProjectCard = ({ title, imageSrc, description, repoLink, demoLink, imgMaxWidth, notBordered }) => (
   <div className="project-card">
-    <div className="project-image-container" style={imgMaxWidth ? { maxWidth: imgMaxWidth, margin: '0 auto 2rem auto' } : {}}>
+    <div className="project-image-container" style={{ maxWidth: imgMaxWidth ? imgMaxWidth : none, margin: imgMaxWidth ? '0 auto 2rem auto' : none, border: notBordered ? '45px solid rgba(0, 0, 0, 0)' : '1px solid rgba(255, 255, 255, 0.08)' }}>
       <img src={imageSrc} alt={`${title} Demo`} className="project-image" />
     </div>
     <h3 style={{ fontSize: '1.8rem', color: '#fff', marginBottom: '1rem' }}>{title}</h3>
@@ -166,9 +166,10 @@ const App = () => {
 
               <h2 className="section-title">Certifications</h2>
               <ul>
-                <li>Intro to Programming Using Python - Microsoft Certified</li>
-                <li>TestOut Network Pro Certified</li>
+                <li>TestOut Network Pro</li>
                 <li>Cyber Crime Technology CTE Certification</li>
+                <li>IT Systems Security CTE Certification</li>
+                <li>Intro to Programming Using Python Microsoft Certification</li>
               </ul>
             </div>
           </FadeInSection>
@@ -221,6 +222,20 @@ const App = () => {
               repoLink="https://github.com/inexaura/unfollowed"
               imgMaxWidth="500px"
             />
+          </FadeInSection>
+
+          <hr className="project-separator" />
+
+          <FadeInSection delay={0.2}>
+            <ProjectCard
+              title="LR-Portfolio"
+              imageSrc="L_icon.png"
+              description="My passion for web development and design inspired me to create this very website. Brought to life with JavaScript libraries like React and Motion alongside good old CSS, it acts as a small creative outlet and interactive showcase of my work."
+              repoLink="https://github.com/inexaura/LR-Portfolio"
+              imgMaxWidth="300px"
+              notBordered={true}
+            />
+
           </FadeInSection>
         </div>
       </section>
