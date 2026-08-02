@@ -161,7 +161,7 @@ const App = () => {
               <div style={{ marginBottom: '3.5rem' }}>
                 <h3>University of Southern California</h3>
                 <div className="date-location">Expected May 2027 | Los Angeles, CA</div>
-                <ul><li>Junior Computer Science Major</li></ul>
+                <ul><li>Senior Computer Science Major</li></ul>
               </div>
 
               <h2 className="section-title">Certifications</h2>
