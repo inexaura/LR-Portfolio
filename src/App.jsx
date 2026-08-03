@@ -23,7 +23,7 @@ const techStack = [
   { slug: 'dart', name: 'Dart' },
   { slug: 'c', name: 'C' },
   { slug: 'cplusplus', name: 'C++' },
-  { slug: 'javascript', name: 'JS' },
+  { slug: 'javascript', name: 'JavaScript' },
   { slug: 'react', name: 'React' }
 ];
 
@@ -201,9 +201,9 @@ const App = () => {
               title="ChatPet"
               imageSrc="chatpet_demo.gif"
               description="Developed as a collaborative group project for a software 
-                        engineering course at USC, ChatPet is an AI-powered digital companion that simulates the 
+                        engineering course at USC, ChatPet is an AI-powered digital companion app that simulates the 
                         experience of raising a virtual pet. Through natural language conversations and caretaking 
-                        actions, including feeding and resting, users maintain the pet's happiness, hunger, and energy 
+                        actions like feeding and resting, users maintain the pet's happiness, hunger, and energy 
                         meters. Consistent interaction is rewarded with the pet's visual evolution and the development 
                         of a unique personality, fostering empathy, responsibility, and a personalized user experience."
               repoLink="https://github.com/xl0u1sx/Project-ChatPet"
@@ -216,11 +216,23 @@ const App = () => {
 
           <FadeInSection delay={0.2}>
             <ProjectCard
+              title="mabot"
+              imageSrc="mabot_demo.gif"
+              description="An older, prefixed-command-style Discord bot originally created during the COVID-19 lockdown to exercise my Python skills. With centralized server management and user engagement in mind, it features a variety of commands for moderation, entertainment, and utility purposes, benefiting server administrators and general members alike."
+              repoLink="https://github.com/inexaura/mabot"
+              imgMaxWidth="550px"
+            />
+          </FadeInSection>
+
+          <hr className="project-separator" />
+
+          <FadeInSection delay={0.2}>
+            <ProjectCard
               title="Unfollowed"
               imageSrc="unfollowed_usage.png"
-              description="A simple, lightweight utility program designed to cross-reference followers and following lists to easily find users an account is following who are not following back."
+              description="Not wanting to pay or spend hours cross-referencing to figure out who was cluttering my following while already having been removed from theirs, I created a simple utility program to compare followers and following lists for a quick and easy answer."
               repoLink="https://github.com/inexaura/unfollowed"
-              imgMaxWidth="500px"
+              imgMaxWidth="520px"
             />
           </FadeInSection>
 
