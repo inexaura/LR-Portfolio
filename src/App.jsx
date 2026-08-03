@@ -61,7 +61,7 @@ const SkillGlobe = () => {
   );
 };
 
-const ProjectCard = ({ title, imageSrc, description, repoLink, demoLink, imgMaxWidth, notBordered }) => (
+const ProjectCard = ({ title, imageSrc, description, repoLink, demoLink, linkDescription, imgMaxWidth, notBordered }) => (
   <div className="project-card">
     <div className="project-image-container" style={{ maxWidth: imgMaxWidth ? imgMaxWidth : none, margin: imgMaxWidth ? '0 auto 2rem auto' : none, border: notBordered ? '45px solid rgba(0, 0, 0, 0)' : '1px solid rgba(255, 255, 255, 0.08)' }}>
       <img src={imageSrc} alt={`${title} Demo`} className="project-image" />
@@ -71,7 +71,7 @@ const ProjectCard = ({ title, imageSrc, description, repoLink, demoLink, imgMaxW
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
       <a href={repoLink} className="project-link" target="_blank" rel="noreferrer">View Repository</a>
       {demoLink && (
-        <a href={demoLink} className="project-link" target="_blank" rel="noreferrer">View Demo on YouTube</a>
+        <a href={demoLink} className="project-link" target="_blank" rel="noreferrer">{linkDescription}</a>
       )}
     </div>
   </div>
@@ -138,19 +138,19 @@ const App = () => {
               <div className="timeline-item">
                 <h3>AI Data Specialist | DataAnnotation</h3>
                 <div className="date-location">June 2025 - Present | Remote</div>
-                <ul><li>Train AI models by crafting high-quality prompts, analyzing model responses, and identifying flaws.</li></ul>
+                <ul><li>Train AI models by crafting high-quality prompts, analyzing model responses, developing detailed evaluation criteria, and identifying flaws.</li></ul>
               </div>
 
               <div className="timeline-item">
                 <h3>Teaching Assistant | Project STEM</h3>
                 <div className="date-location">July 2024 - Present | Remote</div>
-                <ul><li>Provide assistance to teachers and tutor high school students in Python and AP Computer Science courses.</li></ul>
+                <ul><li>Provide assistance to teachers, format class lessons, and tutor high school students across the country in Python and AP Computer Science courses.</li></ul>
               </div>
 
               <div className="timeline-item">
                 <h3>Coding Camp Counselor | CATA</h3>
                 <div className="date-location">June 2022 | Monroe, NC</div>
-                <ul><li>Directed coding activities for middle school students including building websites and drone programming.</li></ul>
+                <ul><li>Shaped and enhanced the skills of 15 middle school students by directing coding activities such as building websites, drone programming, and Python.</li></ul>
               </div>
             </div>
           </FadeInSection>
@@ -208,7 +208,24 @@ const App = () => {
                         of a unique personality, fostering empathy, responsibility, and a personalized user experience."
               repoLink="https://github.com/xl0u1sx/Project-ChatPet"
               demoLink="https://youtube.com/shorts/2HprmH-4oys?feature=shared"
+              linkDescription="View Demo on YouTube"
               imgMaxWidth="300px"
+            />
+          </FadeInSection>
+
+          <FadeInSection delay={0.2}>
+            <ProjectCard
+              title="Minecraft Explorer"
+              imageSrc="grass_block.png"
+              description="I cultivated a zeal for web development after taking a full-stack course as a technical elective in university.
+                        This project was originally created as my final for the class, combining my love for Minecraft with 
+                        a newfound avenue to express both my creative and technical sides. Using Render and Neon for website and database hosting,
+                        I built a web application that allows users to explore the world of Minecraft in a personalized and interactive manner."
+              repoLink="https://github.com/inexaura/Minecraft-Explorer"
+              demoLink="https://minecraft-explorer.onrender.com"
+              linkDescription="Visit Site"
+              imgMaxWidth="400px"
+              notBordered={true}
             />
           </FadeInSection>
 
@@ -228,7 +245,7 @@ const App = () => {
 
           <FadeInSection delay={0.2}>
             <ProjectCard
-              title="Unfollowed"
+              title="unfollowed"
               imageSrc="unfollowed_usage.png"
               description="Not wanting to pay or spend hours cross-referencing to figure out who was cluttering my following while already having been removed from theirs, I created a simple utility program to compare followers and following lists for a quick and easy answer."
               repoLink="https://github.com/inexaura/unfollowed"

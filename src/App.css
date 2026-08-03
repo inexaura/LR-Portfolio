@@ -187,8 +187,8 @@ p.overview-text {
 }
 
 li {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: .7rem;
+  font-size: 1.05rem;
   position: relative;
   padding-left: 1.8rem;
   list-style: none;
@@ -277,8 +277,8 @@ li::before {
 .profile-pic-container {
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
-  margin-bottom: 7rem;
+  margin-top: 1.8rem;
+  margin-bottom: 6rem;
 }
 
 .profile-pic {
@@ -289,15 +289,15 @@ li::before {
   background: transparent;
   box-shadow:
     0 0 0 6px #050508,
-    0 0 0 10px var(--inferno),
-    0 0 0 16px #050508,
-    0 0 0 20px var(--black-cherry),
-    0 0 0 26px #050508,
-    0 0 0 30px var(--shadow-grey),
-    0 0 0 36px #050508,
-    0 0 0 40px var(--silver),
-    0 0 0 46px #050508,
-    0 0 0 50px var(--white-smoke);
+    0 0 0 8px var(--inferno),
+    0 0 0 14px #050508,
+    0 0 0 16px var(--black-cherry),
+    0 0 0 22px #050508,
+    0 0 0 24px var(--shadow-grey),
+    0 0 0 30px #050508,
+    0 0 0 32px var(--silver),
+    0 0 0 38px #050508,
+    0 0 0 40px var(--white-smoke);
 }
 
 .contact-grid {
@@ -352,7 +352,7 @@ li::before {
 
 /* Mobile Device Viewing */
 @media (max-width: 768px) {
-  
+
   nav {
     flex-wrap: wrap;
     justify-content: center;
@@ -381,16 +381,16 @@ li::before {
     width: 140px;
     height: 140px;
     box-shadow:
-      0 0 0 4px #050508,
-      0 0 0 7px var(--inferno),
-      0 0 0 11px #050508,
-      0 0 0 14px var(--black-cherry),
-      0 0 0 18px #050508,
-      0 0 0 21px var(--shadow-grey),
-      0 0 0 25px #050508,
-      0 0 0 28px var(--silver),
-      0 0 0 32px #050508,
-      0 0 0 35px var(--white-smoke);
+      0 0 0 6px #050508,
+      0 0 0 8px var(--inferno),
+      0 0 0 14px #050508,
+      0 0 0 16px var(--black-cherry),
+      0 0 0 22px #050508,
+      0 0 0 24px var(--shadow-grey),
+      0 0 0 30px #050508,
+      0 0 0 32px var(--silver),
+      0 0 0 38px #050508,
+      0 0 0 40px var(--white-smoke);
   }
 
   .profile-pic-container {
